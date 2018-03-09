@@ -1,0 +1,18 @@
+<h1><%= @property.title %></h1>
+<h3><%= @property.main_photo %></h3>
+<h3>Descrição completa</h3>
+<p><%= @property.description %></p>
+<ul>
+  <li>Localização: <%= @property.property_location %></li>
+  <li>Bairro: <%= @property.neighborhood %></li>
+  <li>Finalidade da locação: <%= @property.rent_purpose %></li>
+  <li>Quartos: <%= @property.rooms %></li>
+  <li>Acomoda até: <%= @property.maximum_guests %> pessoas</li>
+  <li>Dias mínimos para locação: <%= @property.minimum_rent %></li>
+  <li>Dias máximos para locação: <%= @property.maximum_rent %></li>
+  <li>Preço da diária: R$ <%= @property.daily_rate %></li>
+  <li>Acessibilidade: <%= @property.accessibility? ? 'Sim' : 'Não' %></li>
+  <li>Aceita animais: <%= @property.allow_pets? ? 'Sim' : 'Não' %></li>
+  <li>Aceita fumantes: <%= @property.allow_smokers? ? 'Sim' : 'Não' %></li>
+</ul>
+<%= link_to 'Voltar', root_path %>
