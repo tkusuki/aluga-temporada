@@ -1,3 +1,5 @@
+<%= link_to 'Cadastrar um imóvel', new_property_path %>
+<hr>
 <% if @properties.empty? %>
   <div>
     Nenhum imóvel encontrado
@@ -5,7 +7,7 @@
   <% else %>
     <% @properties.each do |property| %>
       <div>
-        <h1><%= property.title %></h1>
+        <h1><%= link_to property.title, property_path(property) %></h1>
         <h3><%= property.main_photo %></h3>
         <p>Preço da diária: R$ <%= property.daily_rate %></p>
         <p>Acomoda até: <%= property.maximum_guests %> pessoas</p>

@@ -15,7 +15,7 @@ feature 'User view property details' do
     expect(page).to have_css('p', text: property.description)
     expect(page).to have_css('li', text: "Localização: #{property.property_location}")
     expect(page).to have_css('li', text: "Bairro: #{property.neighborhood}")
-    expect(page).to have_css('li', text: "Finalidade da locação: #{property.rent_purpose}")
+    expect(page).to have_css('li', text: "Finalidades do imóvel: #{property.rent_purpose}")
     expect(page).to have_css('li', text: "Quartos: #{property.rooms}")
     expect(page).to have_css('li', text: "Acomoda até: #{property.maximum_guests} pessoas")
     expect(page).to have_css('li', text: "Dias mínimos para locação: #{property.minimum_rent}")
