@@ -18,7 +18,10 @@ class PropertiesController < ApplicationController
                       :maximum_rent, :daily_rate, :accessibility, :allow_pets,
                       :allow_smokers)
     @property = Property.new(property_params)
-    @property.save
-    redirect_to @property
+    if @property.save
+      redirect_to @property
+    else
+      render 'new'
+    end
   end
 end

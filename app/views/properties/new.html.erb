@@ -1,4 +1,11 @@
 <h1>Cadastrar um imóvel</h1>
+<% if @property.errors.any? %>
+  <div class="form-errors">
+    <% @property%>
+
+  </div>
+<% end %>
+
 <%= form_for @property do |f| %>
   <div>
     <%= f.label :title, 'Título' %>

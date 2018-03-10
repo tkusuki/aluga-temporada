@@ -39,26 +39,28 @@ feature 'Owner register a property' do
     expect(page).to have_css('li', text: "Aceita animais: Sim")
     expect(page).to have_css('li', text: "Aceita fumantes: Não")
     expect(page).to have_link('Voltar')
-
-
   end
 
-  def create_property(title)
-    Property.create(
-      title: title,
-      description: 'Casa de campo isolada para dias tranquilos de descanso',
-      property_location: 'Campos de Jordão',
-      neighborhood: 'Capivari',
-      main_photo: 'casa_de_campo.jpg',
-      rent_purpose: 'Férias em família',
-      rooms: 9,
-      maximum_guests: 9,
-      minimum_rent: 1,
-      maximum_rent: 9,
-      daily_rate: 99.9,
-      accessibility: true,
-      allow_pets: true,
-      allow_smokers: true,
-    )
+  scenario 'and must fill in all required fields' do
+
+    # simula a ação do usuário
+    visit root_path
+    click_on 'Cadastrar um imóvel'
+
+    fill_in 'Título', with: ''
+    fill_in 'Descrição completa', with: ''
+    fill_in 'Localização', with: ''
+    fill_in 'Bairro', with: ''
+    fill_in 'Foto principal', with: ''
+    fill_in 'Finalidades do imóvel', with: ''
+    fill_in 'Quartos', with: ''
+    fill_in 'Número máximo de hospedes', with: ''
+    fill_in 'Dias mínimos para locação', with: ''
+    fill_in 'Dias máximos para locação', with: ''
+    fill_in 'Preço da diária', with: ''
+
+    # expectivas do usuário após ação
+    expect(page).to have_content('Você deve preencher todos os campos obrigatórios')
+
   end
 end
