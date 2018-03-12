@@ -38,10 +38,19 @@ feature 'User visit homepage' do
   def create_property(title)
     Property.create(
       title: title,
-      main_photo: 'casa_de_campo.jpg',
-      daily_rate: 99.9,
-      maximum_guests: 9,
+      description: 'Casa de campo isolada para dias tranquilos de descanso',
       property_location: 'Campos de Jordão',
+      neighborhood: 'Capivari',
+      main_photo: 'casa_de_campo.jpg',
+      rent_purpose: 'Férias em família',
+      rooms: 9,
+      maximum_guests: 9,
+      minimum_rent: 1,
+      maximum_rent: 9,
+      daily_rate: 99.9,
+      accessibility: true,
+      allow_pets: true,
+      allow_smokers: true,
     )
   end
 end

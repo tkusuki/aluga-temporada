@@ -58,6 +58,7 @@ feature 'Owner register a property' do
     fill_in 'Dias mínimos para locação', with: ''
     fill_in 'Dias máximos para locação', with: ''
     fill_in 'Preço da diária', with: ''
+    click_on 'Enviar'
 
     # expectivas do usuário após ação
     expect(page).to have_content('Você deve preencher todos os campos obrigatórios')
